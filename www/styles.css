@@ -1,0 +1,41 @@
+p, h1, h2, h3, img {
+  /* top right bottom left */
+  padding: 0px 50px 20px 50px;
+  text-align: left;
+}
+
+p {
+  font-size: 1.25em;
+  line-height: 1.5em;
+  margin: auto;
+  text-align: left;
+}
+
+p + p {
+  text-indent: 2.5em;
+}
+
+p:first-letter {
+  font-size: 3.5em;
+  line-height: 1em;
+  font-weight: 400;
+  float: left;
+  margin: 0 0.107em 0 0;
+}
+
+p:first-line {
+  font-weight: 800;
+  padding: 20px 100px 20px 100px;
+}
+
+p + p:first-letter {
+  font-size: 1em;
+  line-height: 1.25em;
+  float: none;
+  margin: 0;
+}
+
+p + p:first-line {
+  font-weight: 400;
+  padding: 20px 100px 20px 100px;
+}
