@@ -1,15 +1,16 @@
-p, h1, h2, h3, img {
+h1, h2, h3, img {
   /* top right bottom left */
-  padding: 0.5em 3em 4em 0.5em;
+  padding: 1em 3em 1em;
   text-align: left;
 }
 
 p {
   font-size: 1.25em;
   line-height: 1.43em;
-  margin: auto;
+  margin-left: auto; 
+  margin-right: auto;
   text-align: left;
-  padding: 2em 3em 4em;
+  padding: 1em 3em 1em;
   word-spacing: -0.05em;
 }
 
@@ -52,8 +53,10 @@ td {
 }
 
 table {
-
-  padding: 0; }
+  padding: 1em 3em 1em;
+  margin-left: auto; 
+  margin-right: auto;
+}
   table tr {
     border-top: 1px solid #cccccc;
     background-color: white;

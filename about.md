@@ -1,7 +1,4 @@
-Computing the cost of leave programs
-===================
-
-!['example', fig.align = 'center'](images/example.png)
+<!--- !['example', fig.align = 'center'](images/example_scenario.png) -->
 
 Washington's FAMLI Act will provide income when workers must take extended leaves of up to 12 weeks for the birth or adoption of a child, or the serious health condition of the worker or a close family member, financed through low-cost payroll premiums.  Based on industry values, the attrition rate when no paid leave is offered is 33%. That is, a third of those who take unpaid leave will not return to work once their leave is complete. While the effects of offering paid leave on attrition are not always easy to ascertain, we know that companies such as Google have seen their attrition rate among new mothers halved after increasing paid leave to 18 weeks.  This is where cost savings are generated.
 
