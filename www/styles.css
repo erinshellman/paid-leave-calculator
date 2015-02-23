@@ -1,21 +1,23 @@
 p, h1, h2, h3, img {
   /* top right bottom left */
-  padding: 0px 50px 20px 50px;
+  padding: 0.5em 3em 4em 0.5em;
   text-align: left;
 }
 
 p {
   font-size: 1.25em;
-  line-height: 1.5em;
+  line-height: 1.43em;
   margin: auto;
   text-align: left;
+  padding: 2em 3em 4em;
+  word-spacing: -0.05em;
 }
 
 p + p {
   text-indent: 2.5em;
 }
 
-p:first-letter {
+p:first-child:first-letter {
   font-size: 3.5em;
   line-height: 1em;
   font-weight: 400;

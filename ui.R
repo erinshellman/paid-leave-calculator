@@ -1,5 +1,6 @@
 require(ggplot2)
 require(shiny)
+require(shinyapps)
 require(shinythemes)
 require(reshape2)
 require(scales)
@@ -10,9 +11,9 @@ shinyUI(
   navbarPage("family leave calculator",
 
              # About
-             tabPanel("about", fluidRow(tags$h1("Computing the cost of leave programs"),
-                                        column(12, align = 'center', img(src = "images/example.png", width = "70%")),
-                                        column(12, align = 'center', includeMarkdown("about.md")))),
+             tabPanel("about", fluidRow(#tags$h1("Computing the cost of leave programs"),
+                                        #column(12, align = 'center', img(src = "images/example.png", width = "60%")),
+                                        column(9, offset = 2, includeMarkdown("about.md")))),
 
              # Calculator
              tabPanel("calculator", #icon("sliders", class = NULL, lib = "font-awesome"),
@@ -65,9 +66,6 @@ shinyUI(
                           )
                         )
                       )),
-
-             tabPanel("references", fluidRow(column(12, includeMarkdown("references.md")))),
-             tabPanel("how's it done?", fluidRow(column(12, includeMarkdown("hows-it-done.md")))),
 
              # Set the theme
              theme = shinytheme("flatly"),
