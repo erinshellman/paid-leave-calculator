@@ -50,7 +50,7 @@ simulate_costs = function (days_of_absence, salary_mean,
 
     replacement_costs = data.frame()
     attrited = 0
-    while(sum(attrited) == 0) {
+    while(sum(attrited) == 0) { # make sure there's at least one attrition event
 
       attrited = rbinom(n = n, size = 1, prob = 0.33)
 
@@ -101,7 +101,7 @@ simulate_costs = function (days_of_absence, salary_mean,
 run_test = function () {
   simulate_costs(days_of_absence = 90,
                  salary_mean = 100000,
-                 percent_of_salary = 0,
+                 percent_of_salary = 40,
                  num_employees_on_leave = 50,
                  replacement_settings = c(posting_costs = 1600,
                                           interview_costs = 4200,
@@ -112,3 +112,5 @@ run_test = function () {
                                           consulting_fees = 18000,
                                           overtime_expense = 5500))
 }
+
+# test_output = run_test()

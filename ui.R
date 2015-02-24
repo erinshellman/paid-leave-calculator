@@ -13,7 +13,7 @@ shinyUI(
              # About
              #tabPanel("about", fluidRow(column(9, includeMarkdown("about.md")))),
              tabPanel("about", fluidRow(tags$h1("Computing the cost of leave programs"),
-                                        column(12, align = 'center', img(src = "images/example_scenario.png", width = "70%")),
+                                        column(12, align = 'center', img(src = "images/example_scenario.png", width = "65%")),
                                         column(12, align = 'center', includeMarkdown("about.md")))),
 
              # Calculator

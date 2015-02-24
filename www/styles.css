@@ -79,3 +79,45 @@ table {
       margin-top: 0; }
     table tr th :last-child, table tr td :last-child {
       margin-bottom: 0; }
+
+blockquote {
+
+  font-size: 1.5em;
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 8em;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+
+}
+
+blockquote:before {
+
+  color: #ccc;
+  content: open-quote;
+  font-size: 8em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+
+}
+
+blockquote p {
+
+  display: inline;
+}
+
+blockquote li {
+
+  list-style-type: none;
+  text-align: right;
+  padding: 0.5em 10px;
+  display: block;
+  
+}
+
+blockquote li:before {
+
+  content: "\2014 \2009";
+
+}
