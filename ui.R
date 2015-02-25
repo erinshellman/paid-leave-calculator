@@ -42,7 +42,8 @@ shinyUI(
                         fluidRow(
                           column(3,
                                  sliderInput("salary_mean", "Mean employee salary ($USD):", min = 10000, max = 300000, value = 100000, step = 5000),
-                                 sliderInput("num_employees_on_leave", "Number of employees taking family leave:", min = 0, max = 100, value = 10)
+                                 sliderInput("num_employees_on_leave", "Number of employees taking family leave:", min = 0, max = 100, value = 10),
+                                 sliderInput("attrition_rate", "Attrition rate (% of employees not returning):", min = 0, max = 100, value = 33)
                           ),
                           # Replacement costs configuration
                           column(3,
@@ -56,7 +57,7 @@ shinyUI(
                                  sliderInput("losses", "Institutional losses:", min = 0, max = 100000, value = 77000, step = 1000),
                                  sliderInput("consulting_fees", "Consulting fees:", min = 0, max = 50000, value = 18000, step = 1000),
                                  sliderInput("overtime_expense", "Overtime expense:", min = 0, max = 10000, value = 5500, step = 100),
-                                 h5("External recruiting fees:"), checkboxInput("ext_rec_fee", "33% of salary", TRUE),
+                                 h5("External recruiting fees:"), checkboxInput("external_recruiter_fee", "33% of salary", TRUE),
                                  h5("Salary increase:"), checkboxInput("salary_increase", "1% of salary", TRUE),
                                  h5("Sign-on bonus:"), checkboxInput("signon_bonus", "5% of increased salary", TRUE)
                           ),

@@ -17,15 +17,15 @@ compute_replacement_cost = function(salary, replacement_settings) {
     replacement_settings['losses'] +
     replacement_settings['consulting_fees'] +
     replacement_settings['overtime_expense'] +
-    (salary * 0.33)*replacement_settings['ext_rec_fee'] + # external recruiting fees
-    (salary * 0.1)*replacement_settings['salary_increase'] + # salary increase (salary * 10%)
-    ((salary * 1.1) * 0.05)*replacement_settings['signon_bonus'] # sign on bonus (increased salary * 5%)
+    (salary * 0.33) * replacement_settings['external_recruiter_fee'] +
+    (salary * 0.1) * replacement_settings['salary_increase'] + # salary increase (salary * 10%)
+    ((salary * 1.1) * 0.05) * replacement_settings['signon_bonus'] # sign on bonus (increased salary * 5%)
 
   return(cost)
 
 }
 
-compute_cost_of_leave = function(days_of_absence, salary, percent_of_salary) {
+compute_paid_leave_cost = function(days_of_absence, salary, percent_of_salary) {
 
   # The 1.2 scalar is to account for employee overhead costs like 401K matching,
   # health insurance, and other perks that are distinct from salary.
@@ -35,7 +35,7 @@ compute_cost_of_leave = function(days_of_absence, salary, percent_of_salary) {
 
 }
 
-simulate_costs = function (days_of_absence, salary_mean,
+simulate_costs = function (days_of_absence, salary_mean, attrition_rate,
                            percent_of_salary, num_employees_on_leave,
                            replacement_settings) {
 
@@ -52,12 +52,12 @@ simulate_costs = function (days_of_absence, salary_mean,
     attrited = 0
     while(sum(attrited) == 0) { # make sure there's at least one attrition event
 
-      attrited = rbinom(n = n, size = 1, prob = 0.33)
+      attrited = rbinom(n = n, size = 1, prob = attrition_rate)
 
       replacement_costs = data.frame(salaries = salaries,
                                      attrited = attrited,
                                      cost_of_replacement = compute_replacement_cost(salaries, replacement_settings),
-                                     cost_of_benefits = compute_cost_of_leave(days_of_absence, salaries, percent_of_salary),
+                                     cost_of_benefits = compute_paid_leave_cost(days_of_absence, salaries, percent_of_salary),
                                      condition = 'before')
     }
 
@@ -103,6 +103,7 @@ run_test = function () {
                  salary_mean = 100000,
                  percent_of_salary = 40,
                  num_employees_on_leave = 50,
+                 attrition_rate = 0.33,
                  replacement_settings = c(posting_costs = 1600,
                                           interview_costs = 4200,
                                           reference_check = 1000,
@@ -110,7 +111,12 @@ run_test = function () {
                                           training = 7000,
                                           losses = 77000,
                                           consulting_fees = 18000,
-                                          overtime_expense = 5500))
+                                          overtime_expense = 5500,
+                                          external_recruiter_fee = TRUE,
+                                          salary_increase = TRUE,
+                                          signon_bonus = TRUE))
 }
 
-# test_output = run_test()
+#  (salary * 0.33)*replacement_settings['ext_rec_fee'] + # external recruiting fees
+
+#test_output = run_test()
